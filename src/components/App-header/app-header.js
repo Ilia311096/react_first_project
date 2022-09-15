@@ -3,7 +3,7 @@ import "./app-header.css";
 import { selectAmount } from "../../store/amount/selector";
 import { selectPosts } from "../../store/posts/selector";
 import { useSelector } from "react-redux";
-const AppHeader = () => {
+export const AppHeader = () => {
   const postLenght = useSelector(selectAmount);
   const finalPosts = useSelector(selectPosts);
   const liked = finalPosts.filter((item) => item.like).length;
@@ -16,4 +16,3 @@ const AppHeader = () => {
     </div>
   );
 };
-export default AppHeader;

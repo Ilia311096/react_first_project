@@ -4,7 +4,7 @@ import "../components/Post-list/post-list.css";
 import { selectPosts } from "../store/posts/selector";
 import { selectTerm } from "../store/term/selector";
 import { selectFilter } from "../store/filter/selector";
-import { amountPosts } from "../store/amount/action";
+import { amountSliceActions } from "../store/amount";
 
 export const PostListContainer = () => {
   const postsFromState = useSelector(selectPosts);
@@ -33,7 +33,7 @@ export const PostListContainer = () => {
   const postsAfterFilter = filterPosts(filter, postsAfterSearch);
 
   const posts = postsAfterFilter;
-  dispatch(amountPosts(posts.length));
+  dispatch(amountSliceActions.amountPosts(posts.length));
   return (
     <ul className="app-list list-group">
       <PostList posts={posts} />

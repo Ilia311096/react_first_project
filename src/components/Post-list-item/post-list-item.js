@@ -1,7 +1,7 @@
 import React from "react";
 import "./post-list-item.css";
 
-function Postlistitem({
+export function PostListItem({
   id,
   label,
   onDelete,
@@ -38,5 +38,3 @@ function Postlistitem({
     </div>
   );
 }
-
-export default Postlistitem;

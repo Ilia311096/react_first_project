@@ -1,4 +1,4 @@
-import PostListItem from "../components/Post-list-item/post-list-item";
+import { PostListItem } from "../components/Post-list-item/post-list-item";
 import { useFunctionsForItem } from "../hooks/useFunctionsForItem";
 
 export const PostListItemContainer = ({ post }) => {

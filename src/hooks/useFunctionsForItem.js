@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { onDelete, onImportant, onLike } from "../store/posts/action";
+import { postsSliceActions } from "../store/posts";
 
 export const useFunctionsForItem = () => {
   const dispatch = useDispatch();
-  const clickDelete = (id) => dispatch(onDelete(id));
-  const clickImportant = (id) => dispatch(onImportant(id));
-  const clickLike = (id) => dispatch(onLike(id));
+  const clickDelete = (id) => dispatch(postsSliceActions.onDelete(id));
+  const clickImportant = (id) => dispatch(postsSliceActions.onImportant(id));
+  const clickLike = (id) => dispatch(postsSliceActions.onLike(id));
   return {
     clickDelete,
     clickImportant,

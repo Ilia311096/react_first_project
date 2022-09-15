@@ -1,9 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import "./post-status-filter.css";
-import { filterPosts } from "../../store/filter/action";
-
-function PostStatus({ filter, getFilter }) {
+import { filterSliceActions } from "../../store/filter";
+export function PostStatus({ filter, getFilter }) {
   const dispatch = useDispatch();
   const buttons = [
     { name: "all", label: "all" },
@@ -16,7 +15,7 @@ function PostStatus({ filter, getFilter }) {
         const classes = active ? "btn-info" : "btn-outline-secondary";
         return (
           <button
-            onClick={() => dispatch(filterPosts(name))}
+            onClick={() => dispatch(filterSliceActions.filterPosts(name))}
             key={name}
             type="button"
             className={`btn ${classes}`}
@@ -28,5 +27,3 @@ function PostStatus({ filter, getFilter }) {
     </div>
   );
 }
-
-export default PostStatus;

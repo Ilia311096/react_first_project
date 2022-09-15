@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import "./post-add-form.css";
-import { addPost } from "../../store/posts/action";
+import { postsSliceActions } from "../../store/posts";
 
-function PostAddForm() {
+export function PostAddForm() {
   const [newPost, setNewPost] = useState("");
   const dispatch = useDispatch();
   return (
@@ -11,7 +11,7 @@ function PostAddForm() {
       className="bottom-panel d-flex"
       onSubmit={(e) => {
         e.preventDefault();
-        dispatch(addPost(newPost));
+        dispatch(postsSliceActions.addPost(newPost));
         return setNewPost("");
       }}
     >
@@ -29,5 +29,3 @@ function PostAddForm() {
     </form>
   );
 }
-
-export default PostAddForm;
